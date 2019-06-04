@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../public/js/bundle.js"></script>
+</head>
+
+<body style='max-width: 1150px;margin: auto;'>
+<style>.horizontal {
+    display: flex;
+    flex-direction: row
+}
+
+.justified {
+    justify-content: space-between;
+} </style>
+<div class="form"><h1>Form layout 1</h1>
+    <vaadin-form-layout>
+        <vaadin-checkbox>Customer</vaadin-checkbox>
+        <vaadin-checkbox>hard drive</vaadin-checkbox>
+        <vaadin-text-field label='Home Loan Account'></vaadin-text-field>
+        <vaadin-text-field label='Table'></vaadin-text-field>
+        <vaadin-text-field label='Green'></vaadin-text-field>
+        <vaadin-date-picker placeholder='monitor'></vaadin-date-picker>
+        <vaadin-password-field label='Intelligent Frozen Fish' value="password"></vaadin-password-field>
+        <vaadin-text-field label='Generic Steel Shirt'></vaadin-text-field>
+        <vaadin-checkbox>payment</vaadin-checkbox>
+        <vaadin-checkbox>Iowa</vaadin-checkbox>
+        <vaadin-text-field label='alarm'></vaadin-text-field>
+        <vaadin-radio-button>Licensed</vaadin-radio-button>
+        <vaadin-button disabled>navigating</vaadin-button>
+        <vaadin-button theme="primary">back up</vaadin-button>
+        <vaadin-progress-bar value='0.5829783403145414'></vaadin-progress-bar>
+    </vaadin-form-layout>
+</div>
+<h1>Cards</h1>
+<div style="padding:16px;display: grid;grid-template-columns:repeat(auto-fill, 325px);justify-content: space-around;grid-gap: 32px">
+    <paper-card heading="programming">
+        <div class="card-content">Est placeat eos asperiores provident veniam aspernatur. Odio ullam id. Et animi ipsum
+            possimus quia sint non possimus dolores. Sequi fugit sint hic fuga voluptas ut.
+        </div>
+    </paper-card>
+    <paper-card heading="Mobility">
+        <div class="card-content">Sit consequatur repudiandae. Eum eius ducimus eaque numquam nobis laboriosam omnis.
+            Ipsam nulla pariatur dolor consequatur maxime quo laboriosam.
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">McDermott and Sons
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>74915ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>40640 Rath Run</p>
+            <p class="cafe-light">Rerum consequuntur possimus voluptatum qui. Corrupti quo aliquid ducimus ullam placeat
+                aut et reiciendis. Nemo ducimus autem sed itaque iusto accusantium.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>Director</vaadin-button>
+                <vaadin-button theme="primary">application</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Daniel, Hyatt and Herzog
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>19983ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>61236 Prosacco Inlet</p>
+            <p class="cafe-light">Aut expedita minus dolor. Sed qui aut perspiciatis incidunt consequatur harum. Quia
+                deserunt est placeat atque officia omnis aut modi optio.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>incentivize</vaadin-button>
+                <vaadin-button theme="primary">Viaduct</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Wunsch, Price and Jacobson
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>64788ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>82215 Henri Trail</p>
+            <p class="cafe-light">Corporis eum quidem dolor eos. Illo temporibus cum. Nam molestias magni dolor.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>PNG</vaadin-button>
+                <vaadin-button theme="primary">white</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card heading="Awesome Steel Computer">
+        <div class="card-content">Sed quidem consectetur repellendus maxime voluptas nihil enim velit. Quia minima
+            consequatur sint at qui dolorum veritatis nihil. Deleniti et voluptatem a dolores aut maxime expedita
+            mollitia minima.
+        </div>
+    </paper-card>
+    <paper-card heading="Lodge">
+        <div class="card-content">Optio explicabo voluptas quam sed. Enim vitae alias eaque quibusdam veritatis et.
+            Culpa aliquid laborum.
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Zemlak Inc
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>61434ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>72768 Isai Highway</p>
+            <p class="cafe-light">Molestiae eum est repellendus expedita sed non deleniti id minima. Illo ut et et
+                illum. Unde accusantium sint ut nesciunt esse fugit ut dolor. Et optio repudiandae sapiente et sit qui
+                iusto qui voluptatem. Iste mollitia aut nisi molestiae distinctio eum.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>digital</vaadin-button>
+                <vaadin-button theme="primary">strategic</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+</div>
+<h1>Cards</h1>
+<div style="padding:16px;display: grid;grid-template-columns:repeat(auto-fill, 325px);justify-content: space-around;grid-gap: 32px">
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Vandervort - Feil
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>18668ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>616 Smitham Trail</p>
+            <p class="cafe-light">Expedita magni velit voluptatem. Eligendi illum quisquam ab eius et voluptatem
+                distinctio vitae aspernatur. Reprehenderit ipsa in molestiae.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>Incredible Concrete Keyboard</vaadin-button>
+                <vaadin-button theme="primary">payment</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card heading="Cotton">
+        <div class="card-content">Reiciendis quae perspiciatis asperiores atque voluptatem. Quae voluptatibus distinctio
+            vel. Doloremque adipisci illum ut vero eveniet aut quis occaecati rerum.
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Wolf, Sawayn and Maggio
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>89038ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>24405 Christine Springs</p>
+            <p class="cafe-light">Cum eos neque aut pariatur iure molestiae tenetur sit. Ex officia tenetur et magnam.
+                Reprehenderit ipsam perferendis. Omnis vel qui quas et cum vel corporis. Nobis quaerat vel totam ea qui
+                ut ut est quam.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>ROI</vaadin-button>
+                <vaadin-button theme="primary">synergies</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card heading="monetize">
+        <div class="card-content">Voluptas magni in eum rem porro. Omnis officiis quis. Nulla blanditiis ut accusamus
+            sunt fuga. Molestiae sit consectetur fugiat odit architecto a nisi debitis. Voluptate qui exercitationem
+            ullam dolores rerum unde. Consequuntur voluptates cupiditate et sit.
+        </div>
+    </paper-card>
+    <paper-card heading="Shirt">
+        <div class="card-content">Quo voluptatem labore dignissimos quis ullam et error totam. Illo qui qui. Minima
+            omnis rerum eos sequi sapiente voluptatem et sit accusamus.
+        </div>
+    </paper-card>
+    <paper-card heading="Incredible Wooden Shoes">
+        <div class="card-content">Nulla eum eveniet nihil harum. Consequuntur voluptatum autem. Libero omnis sed
+            voluptas id et sunt dolorum.
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Waters, Fritsch and Goyette
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>9921ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>12300 Eldred Crest</p>
+            <p class="cafe-light">Sed quae explicabo sed deserunt fuga. Aut eos animi. Rerum ut minus a culpa cum
+                et.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>Oklahoma</vaadin-button>
+                <vaadin-button theme="primary">port</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+    <paper-card image="https://dummyimage.com/350x150/99afe2/fdf3a4">
+        <div class="card-content">
+            <div class="cafe-header">Dare, Baumbach and Osinski
+                <div class="cafe-location cafe-light">
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>78366ft</span>
+                </div>
+            </div>
+            <div class="cafe-rating">
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+                <iron-icon class="star" icon="star"></iron-icon>
+            </div>
+            <p>91910 Deckow Glen</p>
+            <p class="cafe-light">Eveniet soluta vel. Voluptatem qui placeat deserunt voluptas eos et. Nesciunt ut
+                voluptates repellendus autem consectetur nam quis.</p>
+        </div>
+        <div class="card-actions">
+            <div class="horizontal justified">
+                <vaadin-button disabled>Crossing</vaadin-button>
+                <vaadin-button theme="primary">hybrid</vaadin-button>
+            </div>
+        </div>
+    </paper-card>
+</div>
+</body>
+
+</html>
