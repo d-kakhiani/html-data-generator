@@ -11,25 +11,24 @@ const fs = require('fs');
             width: 1200,
             height: 600,
         });
-        let start = 1, end = 200;
-        console.log('test')
+        let start = 2850, end = 2850;
         for (let index = start; index < end; index++) {
-            let template = templates[index];
-            const dir = `${root}\\${template}`;
-            console.log(template)
+            let pageUrl = templates[index];
+            // const dir = `${root}\\${template}`;
+            console.log(pageUrl)
 
-            const pages = fs.readdirSync(dir);
-            for (let pageUrl of pages) {
-                if (pageUrl.includes('.html')) {
-                    console.log(`${template}/${pageUrl}`);
-                    // await page.goto(`http://127.0.0.1:1101/data/${template}/${pageUrl}`);
-                    // await page.screenshot(
-                    //     {
-                    //       path: `./data/${template}_${pageUrl.replace('.html',
-                    //           '')}.png`,
-                    //       fullPage: true,
-                    //     });
-                }
+            // const pages = fs.readdirSync(dir);
+            // for (let pageUrl of pages) {
+                if (pageUrl && pageUrl.includes('.html')) {
+                    console.log(`${pageUrl}`);
+                    await page.goto(`http://127.0.0.1:8887/data/${pageUrl}`);
+                    await page.screenshot(
+                        {
+                          path: `./data/${pageUrl.replace('.html',
+                              '')}.png`,
+                          fullPage: true,
+                        });
+                // }
             }
         }
         await browser.close();
