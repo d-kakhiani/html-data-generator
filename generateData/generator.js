@@ -1,88 +1,57 @@
 const tokens = require('./tokens.json');
 const faker = require('faker');
 const fs = require('fs');
-for (let fileId = 1; fileId < 20; fileId++) {
-  let forms = [];
-  for (let i = 0; i < 2; i++) {
-    let form = [];
-    // form.push(tokens.combobox.replace('[]', faker.random.word));
-    form.push(tokens['input'].replace('[]', faker.random.word));
-    form.push(tokens['input'].replace('[]', faker.random.word));
-    form.push(tokens['input'].replace('[]', faker.random.word));
-    form.push(tokens['input'].replace('[]', faker.random.word));
-    form.push(tokens.checkbox.replace('[]', faker.random.word));
-    form.push(tokens.checkbox.replace('[]', faker.random.word));
-    form.push(tokens.checkbox.replace('[]', faker.random.word));
-    form.push(tokens.checkbox.replace('[]', faker.random.word));
-    form.push(tokens['input'].replace('[]', faker.random.word));
-    form.push(tokens['datepicker'].replace('[]', faker.random.word));
-    form.push(tokens['password-input'].replace('[]', faker.random.word));
-    form.push(tokens['radio-button'].replace('[]', faker.random.word));
-    form.push(tokens['radio-button'].replace('[]', faker.random.word));
-    form.push(tokens['radio-button'].replace('[]', faker.random.word));
-    // form.push(tokens['file-upload']);
-    form = faker.helpers.shuffle(form);
+for (let fileId = 1; fileId < 200; fileId++) {
+    let forms = [];
+    for (let i = 0; i < 1; i++) {
+        let form = [];
+        for (let a = 0; a < faker.random.number({min: 1, max: 10}); a++) {
+            form.push(tokens['input'].replace('[]', faker.random.word));
+        }
+        for (let a = 0; a < faker.random.number({min: 1, max: 5}); a++) {
+            form.push(tokens.checkbox.replace('[]', faker.random.word));
+        }
+        form.push(tokens['datepicker'].replace('[]', faker.random.word));
+        form.push(tokens['password-input'].replace('[]', faker.random.word));
+        for (let a = 0; a < faker.random.number({min: 1, max: 5}); a++) {
+            form.push(tokens['radio-button'].replace('[]', faker.random.word));
+        }
+        form = faker.helpers.shuffle(form);
+        form.push(tokens['button-disabled'].replace('[]', faker.random.word));
+        form.push(tokens['button'].replace('[]', faker.hacker.verb));
+        form.push(tokens['progress'].replace('[]', Math.random()));
 
-    form.push(tokens['button-disabled'].replace('[]', faker.random.word));
-    form.push(tokens['button'].replace('[]', faker.hacker.verb));
-    form.push(tokens['progress'].replace('[]', Math.random()));
+        forms.push('<div class="form">' + '<h1>Form layout ' + (i + 1) + '</h1> ' +
+            tokens.form.replace('[]', form.join('\n')) + '</div>');
+    }
 
-    forms.push('<div class="from">' + '<h1>Form layout ' + (i + 1) + '</h1> ' +
-        tokens.form.replace('[]', form.join('\n')) + '</div>');
-  }
+    let cardsLayout = '';
+    let formsData = faker.helpers.shuffle(forms).join('\n');
 
-  let formsData = faker.helpers.shuffle(forms).join('\n');
-  let cards = [];
-  for (let i = 0; i < 10; i++) {
-    let card = `<paper-card heading="${faker.internet.userName()}" image="http://placehold.it/350x150/FFC107/000000" alt="${faker.internet.userName()}">
-      <div class="card-content">${faker.lorem.paragraph()}</div>
-      <div class="card-actions">
-        <vaadin-button>Skip</vaadin-button>
-        <vaadin-button primary>Done!</vaadin-button>
-      </div>
-    </paper-card>`;
+    for (let ii = 0; ii < faker.random.number({min: 1, max: 12}); ii++) {
 
-    cards.push(card);
-    cards.push(`<paper-card heading="${faker.random.word()}" 
-              alt="${faker.random.word()}">
-      <div class="card-content">${faker.lorem.paragraph()}</div>
-    </paper-card>`);
+        let cards = [];
+        for (let i = 0; i < faker.random.number({min: 1, max: 12}); i++) {
+            cards.push(tokens['standard-card'].replace('[heading]', faker.random.word()).replace('[content]', faker.lorem.paragraph()));
 
-    cards.push(`<paper-card image="${faker.image.food()}" alt="Donuts">
-    <div class="card-content">
-      <div class="cafe-header">${faker.company.companyName()}
-        <div class="cafe-location cafe-light">
-          <iron-icon icon="communication:location-on"></iron-icon>
-          <span>${faker.random.number()}ft</span>
-        </div>
-      </div>
-      <div class="cafe-rating">
-        <iron-icon class="star" icon="star"></iron-icon>
-        <iron-icon class="star" icon="star"></iron-icon>
-        <iron-icon class="star" icon="star"></iron-icon>
-        <iron-icon class="star" icon="star"></iron-icon>
-        <iron-icon class="star" icon="star"></iron-icon>
-      </div>
-      <p>${faker.address.streetAddress()}</p>
-      <p class="cafe-light">${faker.lorem.paragraph()}</p>
-    </div>
-    <div class="card-actions">
-      <p>Tonight's availability</p>
-      <div class="horizontal justified">
-        <vaadin-button>7:30PM</vaadin-button>
-        <vaadin-button>8:10PM</vaadin-button>
-      </div>
-    </div>
-  </paper-card>`);
-  }
-  cards = faker.helpers.shuffle(cards);
+            cards.push(tokens["card-with-buttons"]
+                .replace('[image]', `https://dummyimage.com/350x150/99afe2/fdf3a4`)
+                .replace('[header]', faker.company.companyName())
+                .replace('[heading]', faker.company.companyName())
+                .replace('[distance]', faker.random.number())
+                .replace('[address]', faker.address.streetAddress())
+                .replace('[description]', faker.lorem.paragraph())
+                .replace('{buttons}', tokens["button-disabled"].replace('[]', faker.random.word()) + tokens.button.replace('[]', faker.random.word()))
+            );
+        }
+        cards = faker.helpers.shuffle(cards);
 
-  cards = `<h1>Cards</h1><div style="padding:16px;display: grid;grid-template-columns:repeat(auto-fill, 275px);justify-content: space-around;grid-gap: 32px">${cards.join(
-      '\n')}</div>`;
+        cards = `<h1>Cards</h1><div style="padding:16px;display: grid;grid-template-columns:repeat(auto-fill, 325px);justify-content: space-around;grid-gap: 32px">${cards.join('\n')}</div>`;
+        cardsLayout += cards;
+    }
+    fs.writeFileSync(`./data/input-${fileId.toString().padStart(5, '0')}.html`,
+        tokens.header + tokens.style + formsData + cardsLayout + tokens.footer,
+        (err) => {
 
-  fs.writeFileSync(`./data/input-${fileId.toString().padStart(5, '0')}.html`,
-      tokens.header + formsData + cards + tokens.footer,
-      (err) => {
-
-      });
+        });
 }
